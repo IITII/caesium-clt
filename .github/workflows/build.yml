@@ -94,12 +94,21 @@ jobs:
             tar -czf "$dirname.tar.gz" "$dirname"
             echo "ASSET=$dirname.tar.gz" >> $GITHUB_ENV
           fi
-
+      
+      # https://github.com/softprops/action-gh-release?tab=readme-ov-file#-customizing
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
             ${{ env.ASSET }}
+          # body_path: ''
+          body: "Arch:\n
+MacOS ARM: caesiumclt-v1.0.2-aarch64-apple-darwin.tar.gz\n
+MacOS x86_64: caesiumclt-v1.0.2-x86_64-apple-darwin.tar.gz\n
+Linux ARM: caesiumclt-v1.0.2-aarch64-unknown-linux-musl.tar.gz\n
+Linux x86_64: caesiumclt-v1.0.2-x86_64-unknown-linux-musl.tar.gz\n
+Windows x86_64: caesiumclt-v1.0.2-x86_64-pc-windows-msvc.zip
+"
 
       # - name: Upload Artifact 🚀
       #   uses: actions/upload-artifact@v3
