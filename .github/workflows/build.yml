@@ -102,11 +102,13 @@ jobs:
           files: |
             ${{ env.ASSET }}
           # body_path: ''
-          body: "* MacOS ARM: caesiumclt-v*-aarch64-apple-darwin.tar.gz\n
-* MacOS x86_64: caesiumclt-v*-x86_64-apple-darwin.tar.gz\n
-* Linux ARM: caesiumclt-v*-aarch64-unknown-linux-musl.tar.gz\n
-* Linux x86_64: caesiumclt-v*-x86_64-unknown-linux-musl.tar.gz\n
-* Windows x86_64: caesiumclt-v*-x86_64-pc-windows-msvc.zip"
+          body: "|Arch|Release Filename|\n
+|:--: |:--:|\n
+|MacOS ARM| caesiumclt-v1.0.2-aarch64-apple-darwin.tar.gz|\n
+|MacOS x86_64| caesiumclt-v1.0.2-x86_64-apple-darwin.tar.gz|\n
+|Linux ARM| caesiumclt-v1.0.2-aarch64-unknown-linux-musl.tar.gz|\n
+|Linux x86_64| caesiumclt-v1.0.2-x86_64-unknown-linux-musl.tar.gz|\n
+|Windows x86_64| caesiumclt-v1.0.2-x86_64-pc-windows-msvc.zip|\n"
 
       # - name: Upload Artifact 🚀
       #   uses: actions/upload-artifact@v3
